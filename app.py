@@ -22,11 +22,11 @@ st.markdown("""
 """, unsafe_allow_html=True)
 
 # Load the metadata file containing the information about the compounds used
-drug_metadata = pd.read_csv("/home/pranayagarwal/Documents/tahoe_100M/Data/moa_drug_final.csv")
+drug_metadata = pd.read_csv("data/moa_drug_final.csv")
 unique_drugs = drug_metadata['Drug_name'].unique().tolist()
 unique_drugs = ['Select a drug'] + unique_drugs
 
-cell_line = pd.read_csv("/home/pranayagarwal/Documents/tahoe_100M/Data/cell_line.csv")
+cell_line = pd.read_csv("data/cell_line.csv")
 unique_indication = cell_line['lineage'].unique().tolist()
 unique_indication = ['All'] + unique_indication
 
@@ -68,7 +68,7 @@ tumor_indication = st.selectbox("Choose a tumor indication to analyze:", unique_
 
 # Based on user's input find out which h5ad file to download from google cloud
 
-metadata = pd.read_csv("/home/pranayagarwal/Documents/tahoe_100M/Data/meta_data.csv")
+metadata = pd.read_csv("data/meta_data.csv")
 #st.dataframe(metadata.head())
 metadata["concentration, uM"] = metadata["concentration, uM"].astype(str).astype('category')
 filtered = metadata[
