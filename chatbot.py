@@ -20,7 +20,7 @@ def ask_chatbot(user_question, model_choice = 'gpt3'):
     model = MODEL_MAP[model_choice]
     client = OpenAI(
         base_url="https://openrouter.ai/api/v1",
-        api_key="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"
+        api_key="YOUR_API_KEY"
     )
 
     completion = client.chat.completions.create(
